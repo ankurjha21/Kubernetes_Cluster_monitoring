@@ -1,0 +1,27 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  annotations:
+    ingress.kubernetes.io/rewrite-target: /
+    nginx.ingress.kubernetes.io/auth-realm: 'Authentication Required - Linkfire Devops Team '
+    nginx.ingress.kubernetes.io/auth-secret: prom-auth
+    nginx.ingress.kubernetes.io/auth-type: basic
+    nginx.ingress.kubernetes.io/force-ssl-redirect: "true"
+    nginx.ingress.kubernetes.io/ssl-redirect: "true"
+  generation: 1
+  name: prometheus
+  resourceVersion: "29297518"
+  selfLink: /apis/extensions/v1beta1/namespaces/default/ingresses/prometheus
+  uid: a4863483-d3d4-11e9-9899-0a0e5b9be082
+spec:
+  rules:
+  - host: prom.ap-southeast-2.prod.linkfire.co
+    http:
+      paths:
+      - backend:
+          serviceName: prometheus
+          servicePort: 8080
+        path: /
+status:
+  loadBalancer: {}
+
