@@ -3,7 +3,7 @@ kind: Ingress
 metadata:
   annotations:
     ingress.kubernetes.io/rewrite-target: /
-    nginx.ingress.kubernetes.io/auth-realm: 'Authentication Required - Linkfire Devops Team '
+    nginx.ingress.kubernetes.io/auth-realm: 'Authentication Required -  Devops Team '
     nginx.ingress.kubernetes.io/auth-secret: prom-auth
     nginx.ingress.kubernetes.io/auth-type: basic
     nginx.ingress.kubernetes.io/force-ssl-redirect: "true"
@@ -15,7 +15,7 @@ metadata:
   uid: a4863483-d3d4-11e9-9899-0a0e5b9be082
 spec:
   rules:
-  - host: prom.ap-southeast-2.prod.linkfire.co
+  - host: prom.ankur.com
     http:
       paths:
       - backend:
